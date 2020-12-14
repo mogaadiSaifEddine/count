@@ -1,25 +1,35 @@
-import logo from './logo.svg';
+import React from "react";
 import './App.css';
+import Personne from "./Person";
 
-function App() {
+class App extends React.Component {
+  constructor() {
+    console.log("constructor()");
+    super();
+    this.state = {
+     
+      visibilty:false,
+    }
+    };
+ 
+    VisibiltyFun = () => {
+    this.setState({
+      visibilty: !this.state.visibilty
+    });
+  };
+  
+  render() {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <hr />
+      <button onClick={this.VisibiltyFun}>
+        {this.state.visibilty ? "Hide profile " : "Show profile"}
+      </button>
+      {this.state.visibilty && <Personne/>}
+   
     </div>
   );
 }
-
+}
 export default App;
