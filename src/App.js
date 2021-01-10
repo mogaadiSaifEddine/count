@@ -1,35 +1,16 @@
-import React from "react";
-import './App.css';
-import Personne from "./Person";
+import ToDoForm from "./comp/addToDO";
+import ToDoList from "./comp/listTOdo";
+import Filter from "./comp/filter"
 
-class App extends React.Component {
-  constructor() {
-    console.log("constructor()");
-    super();
-    this.state = {
-     
-      visibilty:false,
-    }
-    };
- 
-    VisibiltyFun = () => {
-    this.setState({
-      visibilty: !this.state.visibilty
-    });
-  };
-  
-  render() {
-
+function App() {
   return (
     <div className="App">
-     <hr />
-      <button onClick={this.VisibiltyFun}>
-        {this.state.visibilty ? "Hide profile " : "Show profile"}
-      </button>
-      {this.state.visibilty && <Personne/>}
-   
+    
+      <ToDoForm/>
+      <ToDoList />
+        <Filter/>
     </div>
   );
 }
-}
+
 export default App;
