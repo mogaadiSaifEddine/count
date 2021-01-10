@@ -16,7 +16,7 @@ const Addtodo=({handleAdd})=>{
         dispatch(addTodo({id:Math.random(),edite:false,description:text,isDone:false}));
         setText("");
       }}>
-      <TextField variant="outlined" color="secondary" placeholder="Add New Task" margin="normal" value={text} onChange={(e)=>setText(e.target.value)}  />
+      <TextField variant="outlined" color='#18afc9' placeholder="Add New To-Do For Today " margin="normal" value={text} onChange={(e)=>setText(e.target.value)}  />
     </form>
     </div>
    
